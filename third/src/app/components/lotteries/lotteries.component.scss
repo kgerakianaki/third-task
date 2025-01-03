@@ -1,0 +1,27 @@
+.split-box {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 90%;
+    height: 550px; 
+
+}
+  
+.left-side, .right-side {
+    flex: 1;
+    height: 100%;
+}
+  
+.left-side {
+    background-color: #0E89D0; 
+    border-top-left-radius: 12px;  /* Left side: top-left corner */
+    border-bottom-left-radius: 12px;  /* Left side: bottom-left corner */
+}
+  
+.right-side {
+    background-color: #FFFFFF; 
+    border-top-right-radius: 12px; /* Right side: top-right corner */
+    border-bottom-right-radius: 12px; /* Right side: bottom-right corner */
+}
+  
+  

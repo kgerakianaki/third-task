@@ -1,0 +1,19 @@
+.welcome{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap:10px;
+    margin:20px;
+}
+
+.img-container{
+    display: flex;
+    justify-content: center;
+    background-color: #F1F7FE;
+    border-radius: 12px;
+    width:100px;
+    height: 100px;
+    padding: 15px;
+}

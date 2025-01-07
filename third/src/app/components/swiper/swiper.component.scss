@@ -2,10 +2,20 @@
 swiper-container {
   max-width: 450px;
   width: 100%;  /* Ensure it takes full width up to the maximum */
-  height: 500px;
+  height: 700px;
   overflow: hidden; /* Ensure overflow doesn't affect layout */
-}
+--swiper-theme-color: #ffffff !important;
+--swiper-pagination-bullet-active-width: 30px;
+--swiper-pagination-bullet-width: 10px;
+--swiper-pagination-bullet-height: 10px;
+--swiper-pagination-bullet-active-width: 30px;
+--swiper-pagination-bullet-color: gray;
+--swiper-pagination-bullet-active-color: black;
 
+}
+.swiper-pagination-bullet-active {
+    width: 20px !important;
+}
 swiper-slide {
   /* Optional: you can add any specific styles for the slides if needed */
   display: flex;

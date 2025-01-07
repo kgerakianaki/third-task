@@ -14,6 +14,6 @@ export class SwiperComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-   
+ 
   }
 }

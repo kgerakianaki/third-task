@@ -1,3 +1,101 @@
-<p>
-  form works!
-</p>
+<form action="" class="dataForm">
+  <ion-row class="firstLine">
+    <ion-col size="8">
+      <ion-label>{{ 'form.email' | translate }}</ion-label>
+      <div class="email-line">
+        <ion-input
+        class="email"
+        type="email"
+        [placeholder]="'form.email' | translate"
+      ></ion-input>
+      
+      <img src="assets/images/email/mail.png" class="popover-img">
+    </div>
+    </ion-col>
+    <ion-col class="event" size="4">
+      <ion-label>{{'form.eventType' | translate }}</ion-label>
+      <ion-button class="popover-button" id="trigger-button">
+        <div class="popoverButton">
+          {{'form.event'|translate}}
+          <img src="assets/images/arrow/arrow-down.png" alt="arrow icon" class="popover-img">
+        </div>
+      </ion-button>
+
+      <ion-popover class="custom-popover"   class="custom-popover"
+      mode="ios"
+      trigger="trigger-button"
+      side="bottom"
+      alignment="end"
+     >
+        <ng-template class="popover-template">
+          <ion-content>
+            <div class="content">
+            <img src="assets/images/swiper-icons/cinema/cinema.png" alt="cinema icon" class="popover-img">
+            {{'form.cinema'|translate}}
+          </div>
+          </ion-content>
+          <ion-content>
+            <div class="content">
+            <img src="assets/images/swiper-icons/travelling/travel.png" alt="travel icon" class="popover-img">
+            {{'form.travel'|translate}}
+          </div>
+          </ion-content>
+          <ion-content>
+            <div class="content">
+            <img src="assets/images/swiper-icons/football/soccer-game.png" alt="football icon" class="popover-img">
+            {{'form.football'|translate}}
+          </div>
+          </ion-content>
+        </ng-template>
+      </ion-popover>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="secondLine">
+  <ion-label>{{'form.phoneNumberLabel'|translate}}</ion-label>
+  <sk-tel-input
+  [totalBackgroundHexColor]="'#FFF'" 
+  [selectorBackgroundHexColor]="'#0E89D0'"
+  [inputBackgroundHexColor]="'#FFF'" 
+  [borderHexColor]="'#707070'"
+  [arrowIconHexColor]="'#7904FF'" 
+  [checkedCountryIconHexColor]="'#7904FF'"
+  [dividerPreferredCountriesColor]="'#0E89D0'" 
+  [dividerSearchInputCountriesColor]="'#0E89D0'"
+  [inputContents]="getFormControlValue('phone')"
+  [placeholderInput]="'form.phoneNumber' | translate"
+  [textInputHexColor]="'#212121'" 
+  [caseCodeSelectorTriggerID]="'register_page_mob_phone'"
+  [initialSelectedCountryISO]="'gr'" 
+  [preferredCountriesISOList]="['gr']"
+  [placeholderSearchCountriesInput]="'search.placeholder' | translate"
+  [presentSearchBarCountries]="false"
+  (emitInputContentEvent)="handleSkTelInputContents($event)">
+</sk-tel-input>
+  </ion-row>
+
+  <ion-row>
+    <p class="randomDraw">{{'form.randomDraw'|translate}}</p>
+  </ion-row>
+
+  <ion-row class="createRandom">
+    <div class="randomizer">
+   
+      <h3 class="number">
+      @if(true){
+        {{'form.lottery'|translate}}
+      }
+      </h3>
+  
+      <ion-button class="create">
+        {{'form.create'|translate}}
+      </ion-button>
+    </div>
+  </ion-row>
+  
+  <ion-row class="buttonLine">
+    <ion-button class="apply">
+      {{'form.apply'|translate}}
+    </ion-button>
+  </ion-row>
+</form>

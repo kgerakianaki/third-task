@@ -1,0 +1,33 @@
+
+swiper-container {
+  max-width: 450px;
+  width: 100%;  /* Ensure it takes full width up to the maximum */
+  height: 500px;
+  overflow: hidden; /* Ensure overflow doesn't affect layout */
+}
+
+swiper-slide {
+  /* Optional: you can add any specific styles for the slides if needed */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+img{
+    width: 300px;
+    height: 300px;
+}
+
+h2.swiper{
+    color:#FFFFFF;
+}
+
+p.swiper{
+    color:#FFFFFF;
+}
+
+
+
+  

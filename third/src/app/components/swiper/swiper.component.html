@@ -1,3 +1,45 @@
-<p>
-  swiper works!
-</p>
+<swiper-container
+  pagination="true"
+  pagination-clickable="true" 
+  >
+  
+  <!-- Cinema Slide -->
+  <swiper-slide>
+    <div class="slide">
+      <img src="assets/images/swiper-icons/cinema/cinema.png" alt="" class="">
+    </div>
+    <h2 class="swiper">
+      {{'slider.cinemaTitle' | translate}}
+    </h2>
+    <p class="swiper">
+      {{'slider.cinemaDescription' | translate}}
+    </p>
+  </swiper-slide>
+
+  <!-- Travel Slide -->
+  <swiper-slide>
+    <div class="slide">
+      <img src="assets/images/swiper-icons/travelling/travel.png" alt="" class="">
+    </div>
+    <h2 class="swiper">
+      {{'slider.travelTitle' | translate}}
+    </h2>
+    <p class="swiper">
+      {{'slider.travelDescription' | translate}}
+    </p>
+  </swiper-slide>
+
+  <!-- Football Slide -->
+  <swiper-slide>
+    <div class="slide">
+      <img src="assets/images/swiper-icons/football/soccer-game.png" alt="" class="">
+    </div>
+    <h2 class="swiper">
+      {{'slider.footballTitle' | translate}}
+    </h2>
+    <p class="swiper">
+      {{'slider.footballDescription' | translate}}
+    </p>
+  </swiper-slide>
+
+</swiper-container>

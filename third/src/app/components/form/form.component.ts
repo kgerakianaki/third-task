@@ -83,7 +83,7 @@ export class FormComponent implements OnInit {
   this.translateService.get(str).subscribe((res: string) => {
     this.eventType = res;
   });
-  console.log("Event type:",this.eventType)
+
   
   // Sets the value of the 'eventType' form control in 'lotterySection' form group
   this.lotterySection.get('eventType')?.setValue(this.eventType);
@@ -93,7 +93,7 @@ export class FormComponent implements OnInit {
   // This function creates a random number
   generateRandomInteger() {
     const randomNumberNumber = Math.floor(Math.random() * 1000) + 1; // Random number (1, 1000)
-    //Need to check if it already exists in the table
+  
     this.randomNumber =
       randomNumberNumber < 1000
         ? randomNumberNumber.toString().padStart(4, "0")
@@ -103,16 +103,68 @@ export class FormComponent implements OnInit {
 
   }
 
+  
+
+  // Check if the email already exists in the ticket array
+   isEmailDuplicate(email: string): boolean {
+    return this.ticketArray.some(ticket => ticket.email === email);
+  }
+
+  // Check if the phone number already exists in the ticket array
+  isPhoneDuplicate(phone: string): boolean {
+    return this.ticketArray.some(ticket => ticket.mobile === phone);
+  }
+
+  // Check if the random number already exists in the ticket array
+  isRandomNumberDuplicate(randomNumber: string): boolean {
+    return this.ticketArray.some(ticket => ticket.ticketNumber === randomNumber);
+  }
+
+  // Check if the form is valid
+  isFormValid(): boolean {
+    const email = this.lotterySection.get('email')?.value || '';
+    const phone = this.lotterySection.get('mobile')?.value || '';
+    const randomNumber = this.lotterySection.get('ticketNumber')?.value || '';
+    const eventType = this.lotterySection.get('eventType')?.value;
+
+    // Conditions for enabling the submit button
+    return (
+      this.lotterySection.valid &&
+      !this.isEmailDuplicate(email) &&
+      !this.isPhoneDuplicate(phone) &&
+      !this.isRandomNumberDuplicate(randomNumber) &&
+      !!eventType &&
+      !!randomNumber
+    );
+  }
+
   // Method to submit the form
   submitForm() {
-    if (this.lotterySection.valid) {
-      console.log('Form Submitted:', this.lotterySection.value);
+    if (this.isFormValid()) {
+      this.addTicket();
+      console.log(this.ticketArray)
     } else {
       console.log('Form is invalid');
     }
   }
 
-  checkValid(){
-    return this.lotterySection.valid;
+  addTicket(){
+    const newTicket: Ticket = {
+      id: this.ticketArray.length + 1,
+      email: this.lotterySection.get('email')?.value || '',
+      ticketEventType: this.lotterySection.get('eventType')?.value || '',
+      mobile: this.lotterySection.get('mobile')?.value || '',
+      mobilePrefix: this.lotterySection.get('mobilePrefix')?.value || '',
+      ticketNumber: this.lotterySection.get('ticketNumber')?.value || '',
+    };
+
+    this.ticketArray.push(newTicket);
+    console.log('Ticket added:', newTicket);
+    console.log('ticketArray',this.ticketArray)
+  }
+
+   // Method to disable the submit button based on validation
+   get isSubmitButtonDisabled(): boolean {
+    return !this.isFormValid();
   }
 }

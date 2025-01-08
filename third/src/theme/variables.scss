@@ -44,7 +44,8 @@
 }
 
 .skInputRow[_ngcontent-ng-c1387238740] {
-   //background: linear-gradient(to right, #0E89D0 28%, white 28%)!important;
+    width: 100%;
+   background: linear-gradient(to right, #0E89D0 22%, white 22%)!important;
 }
 
 
@@ -56,11 +57,3 @@
 
 
 
-.swiper-pagination-bullet {
-    width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px));
-    height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
-    display: inline-block;
-    border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
-    background: var(--swiper-pagination-bullet-inactive-color, #fff) !important;
-    opacity: var(--swiper-pagination-bullet-inactive-opacity, .2);
-  }

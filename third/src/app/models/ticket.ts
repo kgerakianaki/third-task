@@ -1,4 +1,5 @@
 export interface Ticket {
+  id: number;
   email: string;
   ticketEventType: string;
   mobile: string;

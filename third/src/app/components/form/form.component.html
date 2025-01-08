@@ -1,22 +1,39 @@
-<form action="" class="dataForm">
+<form [formGroup]="lotterySection" class="dataForm" (ngSubmit)="submitForm()">
   <ion-row class="firstLine">
     <ion-col size="7">
       <ion-label>{{ 'form.email' | translate }}</ion-label>
       <div class="email-line">
         <ion-input
-        class="email"
-        type="email"
-        [placeholder]="'form.email' | translate"
-      ></ion-input>
-      
+          class="email"
+          type="email"
+          formControlName="email" 
+          required
+          [placeholder]="'form.email' | translate"
+        ></ion-input>
       <img src="assets/images/email/mail.png" class="popover-img">
     </div>
+    <!-- Use *ngIf to check form control validity
+    @if(lotterySection.get('email')?.invalid && lotterySection.get('email')?.touched)
+    {
+      <p class="red">{{ checkEmailError() }}</p>
+    } -->
     </ion-col>
     <ion-col class="event" size="5">
-      <ion-label>{{'form.eventType' | translate }}</ion-label>
+      <ion-label>
+       
+        {{'form.eventType' | translate }}
+       
+      </ion-label>
       <ion-button class="popover-button">
         <div class="popoverButton">
+
+        @if(eventType==''){
           {{'form.event'|translate}}
+        }
+        @else {
+          {{eventType}}
+        }
+
           <img src="assets/images/arrow/arrow-down.png" alt="arrow icon" class="popover-img"  id="trigger-button">
         </div>
       </ion-button>
@@ -29,19 +46,19 @@
      >
         <ng-template class="popover-template">
           <ion-content>
-            <div class="content">
+            <div class="content" (click)="selectEvent('form.cinema')">
             <img src="assets/images/swiper-icons/cinema/cinema.png" alt="cinema icon" class="popover-img">
             {{'form.cinema'|translate}}
           </div>
           </ion-content>
           <ion-content>
-            <div class="content">
+            <div class="content" (click)="selectEvent('form.travel')">
             <img src="assets/images/swiper-icons/travelling/travel.png" alt="travel icon" class="popover-img">
             {{'form.travel'|translate}}
           </div>
           </ion-content>
           <ion-content>
-            <div class="content">
+            <div class="content" (click)="selectEvent('form.football')">
             <img src="assets/images/swiper-icons/football/soccer-game.png" alt="football icon" class="popover-img">
             {{'form.football'|translate}}
           </div>
@@ -54,8 +71,7 @@
   <ion-row class="secondLine">
     <ion-col size="7">
       <ion-label>{{'form.phoneNumberLabel'|translate}}</ion-label>
-      <sk-tel-input
- 
+    <sk-tel-input
       [totalBackgroundHexColor]="'#FFFFFF'" [selectorBackgroundHexColor]="'#0E89D0'"
       [inputBackgroundHexColor]="'#FFFFFF'" [borderHexColor]="'#F1F7FE'"
       [arrowIconHexColor]="' #0E89D0'" [checkedCountryIconHexColor]="'#0E89D0'"
@@ -71,7 +87,7 @@
       [presentSearchBarCountries]="false"
       [readOnlyInput]="false"
       (emitInputContentEvent)="handleSkTelInputContents($event)">
-    </sk-tel-input>
+    </sk-tel-input> 
     </ion-col>
   </ion-row>
 
@@ -98,7 +114,7 @@
   </ion-row>
   
   <ion-row class="buttonLine">
-    <ion-button class="apply">
+    <ion-button class="apply" type="submit" [disabled]="lotterySection.invalid">
       {{'form.apply'|translate}}
     </ion-button>
   </ion-row>

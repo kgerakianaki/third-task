@@ -1,2 +1,53 @@
-// For information on how to create your own theme, please see:
-// http://ionicframework.com/docs/theming/
+/*CSS FOR SK-INPUT-TEL*/
+//sktelChange
+
+.skInputRow[_ngcontent-ng-c1387238740]{
+    width:100%;
+    align-items:center
+}
+
+.mainInput[_ngcontent-ng-c1387238740]{    
+    font-size: 16px;
+    caret-color: #212121 !important;
+    --highlight-color: #212121 !important;
+    --placeholder-color: #212121;
+    width: calc(100% - 68px);
+    font-weight: 700;
+    --padding-start: 5px;
+    min-height: 36px;
+    border-radius: 12px;
+}
+
+.ion-icon{
+    display:none;
+}
+
+.greyCountryCodelabel[_ngcontent-ng-c1387238740] {
+    font-size: 14px;
+    color: #ffffff !important; /* Make text white */
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.searchCountriesInput[_ngcontent-ng-c3860071647] {
+    --highlight-color: #212121 !important;
+}
+
+.basicSelectorDiv[_ngcontent-ng-c3860071647] {
+    border-radius: 12px 0 0 12px!important;
+    padding: 8px!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 100%;
+}
+
+.skInputRow[_ngcontent-ng-c1387238740] {
+   //background: linear-gradient(to right, #0E89D0 28%, white 28%)!important;
+}
+
+
+.selectorIcon[_ngcontent-ng-c3860071647]{
+    display:none;
+}

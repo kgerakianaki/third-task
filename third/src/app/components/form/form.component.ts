@@ -22,11 +22,10 @@ export class FormComponent implements OnInit {
   // This method is handling the output of the sk tel input
   handleSkTelInputContents(skTelOutput: SKTelInputOutput) {
     //this.helper.consoleHandler("SK Tel Input Output: ", skTelOutput);
-
     // Proper setup the content and the form fields
     //this.testForm
-   //   .get("prefix")
-   //   .setValue(`+${skTelOutput.selectedCountryCode.dialCode}`);
+    //   .get("prefix")
+    //   .setValue(`+${skTelOutput.selectedCountryCode.dialCode}`);
     //this.testForm.get("phone").setValue(`${skTelOutput.telInputContents}`);
   }
 }

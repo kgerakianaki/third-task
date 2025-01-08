@@ -1,6 +1,6 @@
 <form action="" class="dataForm">
   <ion-row class="firstLine">
-    <ion-col size="8">
+    <ion-col size="7">
       <ion-label>{{ 'form.email' | translate }}</ion-label>
       <div class="email-line">
         <ion-input
@@ -12,16 +12,16 @@
       <img src="assets/images/email/mail.png" class="popover-img">
     </div>
     </ion-col>
-    <ion-col class="event" size="4">
+    <ion-col class="event" size="5">
       <ion-label>{{'form.eventType' | translate }}</ion-label>
-      <ion-button class="popover-button" id="trigger-button">
+      <ion-button class="popover-button">
         <div class="popoverButton">
           {{'form.event'|translate}}
-          <img src="assets/images/arrow/arrow-down.png" alt="arrow icon" class="popover-img">
+          <img src="assets/images/arrow/arrow-down.png" alt="arrow icon" class="popover-img"  id="trigger-button">
         </div>
       </ion-button>
 
-      <ion-popover class="custom-popover"   class="custom-popover"
+      <ion-popover class="custom-popover"
       mode="ios"
       trigger="trigger-button"
       side="bottom"
@@ -52,26 +52,27 @@
   </ion-row>
 
   <ion-row class="secondLine">
-  <ion-label>{{'form.phoneNumberLabel'|translate}}</ion-label>
-  <sk-tel-input
-  [totalBackgroundHexColor]="'#FFF'" 
-  [selectorBackgroundHexColor]="'#0E89D0'"
-  [inputBackgroundHexColor]="'#FFF'" 
-  [borderHexColor]="'#707070'"
-  [arrowIconHexColor]="'#7904FF'" 
-  [checkedCountryIconHexColor]="'#7904FF'"
-  [dividerPreferredCountriesColor]="'#0E89D0'" 
-  [dividerSearchInputCountriesColor]="'#0E89D0'"
-  [inputContents]="getFormControlValue('phone')"
-  [placeholderInput]="'form.phoneNumber' | translate"
-  [textInputHexColor]="'#212121'" 
-  [caseCodeSelectorTriggerID]="'register_page_mob_phone'"
-  [initialSelectedCountryISO]="'gr'" 
-  [preferredCountriesISOList]="['gr']"
-  [placeholderSearchCountriesInput]="'search.placeholder' | translate"
-  [presentSearchBarCountries]="false"
-  (emitInputContentEvent)="handleSkTelInputContents($event)">
-</sk-tel-input>
+    <ion-col size="7">
+      <ion-label>{{'form.phoneNumberLabel'|translate}}</ion-label>
+      <sk-tel-input
+ 
+      [totalBackgroundHexColor]="'#FFFFFF'" [selectorBackgroundHexColor]="'#0E89D0'"
+      [inputBackgroundHexColor]="'#FFFFFF'" [borderHexColor]="'#F1F7FE'"
+      [arrowIconHexColor]="' #0E89D0'" [checkedCountryIconHexColor]="'#0E89D0'"
+      [dividerPreferredCountriesColor]="'#0E89D0'" [dividerSearchInputCountriesColor]="'#0E89D0'"
+      [textInputHexColor]="'#212121'"
+      [caretColorInput]="'#212121'"
+      [inputContents]="getFormControlValue('phone')"
+      [placeholderInput]="'form.phoneNumber' | translate"
+      [caseCodeSelectorTriggerID]="'register_page_mob_phone'"
+      [initialSelectedCountryISO]="'gr'" [selectedCountryByPhoneCode]="getFormControlValue('prefix')"
+      [preferredCountriesISOList]="['gr']"
+      [placeholderSearchCountriesInput]="'customers.search' | translate"
+      [presentSearchBarCountries]="false"
+      [readOnlyInput]="false"
+      (emitInputContentEvent)="handleSkTelInputContents($event)">
+    </sk-tel-input>
+    </ion-col>
   </ion-row>
 
   <ion-row>

@@ -14,8 +14,9 @@
     display:flex;
     align-items: center;
     justify-content: space-around;
-    border: 1px solid #707070;
+    border: 2px solid  #F1F7FE;
     border-radius: 12px;
+    height:50px;
     padding:0px 10px;
 }
 
@@ -23,6 +24,7 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    height:100px;
 }
 
 .popoverButton {
@@ -37,7 +39,7 @@
     --color: #0E89D0;
     --border-radius: 12px;
     --box-shadow: none;
-    font-weight: 500;
+    font-weight: 900;
     display: flex;
     justify-content: space-between;
     text-transform: capitalize;
@@ -49,8 +51,8 @@
     --background: #0E89D0;
     --backdrop-opacity: 0.6;
     --color: white;
-    --width: 225px;
     --border-radius: 12px;
+    --top:1px;
     cursor: pointer;
     border: none; /* Removed borders from popover */
 }
@@ -87,7 +89,7 @@
 .randomizer{
     min-width:300px;
     border-radius: 12px;
-    border:1px solid #707070;
+    border:1px solid #f1f8fe;
     display: flex;
     justify-content: space-between;
     padding: 10px 5px;
@@ -122,3 +124,4 @@
     min-width: 150px;  
     min-height: 55px;
 }
+

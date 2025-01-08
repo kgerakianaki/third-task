@@ -83,12 +83,15 @@
     <div class="randomizer">
    
       <h3 class="number">
-      @if(true){
+      @if(randomNumber==''){
         {{'form.lottery'|translate}}
+      }
+      @else{
+        {{randomNumber}}
       }
       </h3>
   
-      <ion-button class="create">
+      <ion-button class="create" (click)="generateRandomInteger()">
         {{'form.create'|translate}}
       </ion-button>
     </div>

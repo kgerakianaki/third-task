@@ -51,3 +51,16 @@
 .selectorIcon[_ngcontent-ng-c3860071647]{
     display:none;
 }
+
+
+
+
+
+.swiper-pagination-bullet {
+    width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px));
+    height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
+    display: inline-block;
+    border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
+    background: var(--swiper-pagination-bullet-inactive-color, #fff) !important;
+    opacity: var(--swiper-pagination-bullet-inactive-opacity, .2);
+  }

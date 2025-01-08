@@ -10,6 +10,8 @@ import { SKTelInputModule, SKTelInputOutput } from "sk-tel-input";
 })
 export class FormComponent implements OnInit {
   emailPattern: string = "^[a-zA-Z0-9._]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
+
+  randomNumber: string = "";
   constructor() {}
 
   ngOnInit() {}
@@ -27,5 +29,15 @@ export class FormComponent implements OnInit {
     //   .get("prefix")
     //   .setValue(`+${skTelOutput.selectedCountryCode.dialCode}`);
     //this.testForm.get("phone").setValue(`${skTelOutput.telInputContents}`);
+  }
+
+  // This function creates a random number
+  generateRandomInteger() {
+    const randomNumberNumber = Math.floor(Math.random() * 1000) + 1; // Random number (1, 1000)
+
+    this.randomNumber =
+      randomNumberNumber < 1000
+        ? randomNumberNumber.toString().padStart(4, "0")
+        : randomNumberNumber.toString();
   }
 }

@@ -1,0 +1,30 @@
+<div class="overlay">
+  <div class="alertComponent">
+
+    <div class="close-alert" (click)="closeAlert()">
+      <img src="assets/images/close-btn/close.svg" alt="Close" class="close-btn" />
+    </div>
+
+    <div class="image">
+      <img src="assets/images/completed/check-mark.svg" alt="Alert-tick" class="alert-photo"/>
+    </div>
+
+    <div class="title">
+      <label for="teleia" class="title">
+      {{ 'alert.perfect' | translate }}
+      </label>
+    </div>
+
+    <div class="subtitle">
+      {{ 'alert.success' | translate }}
+    </div>
+
+    <div class="button-line">
+      <ion-button (click)="closeAlert()">
+        {{ 'alert.continue' | translate }}
+      </ion-button>
+    </div>
+
+    
+  </div>
+</div>

@@ -6,11 +6,12 @@ import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { PopoverController } from "@ionic/angular";
 import { SKTelInputModule, SKTelInputOutput } from "sk-tel-input";
 import { Ticket } from "src/app/models/ticket";
+import { AlertComponent } from "../alert/alert.component";
 @Component({
   selector: "app-form",
   templateUrl: "./form.component.html",
   styleUrls: ["./form.component.scss"],
-  imports: [TranslateModule, IonicModule, SKTelInputModule, CommonModule, ReactiveFormsModule]
+  imports: [TranslateModule, IonicModule, SKTelInputModule, CommonModule, ReactiveFormsModule, AlertComponent]
 })
 export class FormComponent implements OnInit {
   emailPattern: string = "^[a-zA-Z0-9._]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
@@ -18,6 +19,9 @@ export class FormComponent implements OnInit {
   randomNumber: string = "";
   // Define ticketArray with type Tickets[]
   ticketArray: Ticket[] = [];
+
+  //Show alert
+  added:boolean=false;
 
   // Define the FormGroup with the email field and validation
   lotterySection = new FormGroup({
@@ -143,6 +147,7 @@ export class FormComponent implements OnInit {
     if (this.isFormValid()) {
       this.addTicket();
       console.log(this.ticketArray)
+      this.added=true;
     } else {
       console.log('Form is invalid');
     }
@@ -166,5 +171,21 @@ export class FormComponent implements OnInit {
    // Method to disable the submit button based on validation
    get isSubmitButtonDisabled(): boolean {
     return !this.isFormValid();
+  }
+
+  //This method close success alert
+  getCloseAlert($event:any){
+    console.log("shit")
+    //Close alert
+    this.added=false;
+    //Clean form
+    this.lotterySection.reset();
+
+    // Reset other dynamic properties
+    this.randomNumber = '';  // Reset random number
+    this.eventType = '';      // Reset event type
+
+    //I need to reset the sk-tel-input component value using FormControl
+   
   }
 }

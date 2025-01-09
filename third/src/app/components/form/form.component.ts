@@ -11,7 +11,7 @@ import { AlertComponent } from "../alert/alert.component";
   selector: "app-form",
   templateUrl: "./form.component.html",
   styleUrls: ["./form.component.scss"],
-  imports: [TranslateModule, IonicModule, SKTelInputModule, CommonModule, ReactiveFormsModule, AlertComponent]
+  imports: [TranslateModule, IonicModule, SKTelInputModule, ReactiveFormsModule, AlertComponent]
 })
 export class FormComponent implements OnInit {
   emailPattern: string = "^[a-zA-Z0-9._]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
@@ -22,6 +22,10 @@ export class FormComponent implements OnInit {
 
   //Show alert
   added:boolean=false;
+  //show loader
+  isLoading:boolean=false;
+
+  phoneValue:any = ''; 
 
   // Define the FormGroup with the email field and validation
   lotterySection = new FormGroup({
@@ -147,7 +151,11 @@ export class FormComponent implements OnInit {
     if (this.isFormValid()) {
       this.addTicket();
       console.log(this.ticketArray)
-      this.added=true;
+      this.isLoading=true;
+      setTimeout(() => {
+        // Your code to execute after 2 seconds
+        this.added=true;
+      }, 2000); // 2000 milliseconds = 2 seconds
     } else {
       console.log('Form is invalid');
     }
@@ -175,6 +183,8 @@ export class FormComponent implements OnInit {
 
   //This method close success alert
   getCloseAlert($event:any){
+    //Reset loader
+    this.isLoading=false;
     //Close alert
     this.added=false;
     //Clean form
@@ -183,8 +193,8 @@ export class FormComponent implements OnInit {
     // Reset other dynamic properties
     this.randomNumber = '';  // Reset random number
     this.eventType = '';      // Reset event type
+    //Reset the sk-tel-input component 
+    this.phoneValue = null;
 
-    //I need to reset the sk-tel-input component value using FormControl
-   
   }
 }

@@ -1,6 +1,6 @@
 <form [formGroup]="lotterySection" class="dataForm" (ngSubmit)="submitForm()">
   <ion-row class="firstLine">
-    <ion-col size="9">
+    <ion-col size="8">
       <ion-label>{{ 'form.email' | translate }}</ion-label>
       <div class="email-line">
         <ion-input
@@ -13,13 +13,13 @@
       <img src="assets/images/email/mail.png" class="popover-img">
     </div>
     </ion-col>
-    <ion-col class="event" size="3">
+    <ion-col class="event" size="4">
       <ion-label class="single-line-label">
        
         {{'form.eventType' | translate }}
        
       </ion-label>
-      <ion-button class="popover-button">
+      <ion-button class="popover-button" >
         <div class="popoverButton">
 
         @if(eventType==''){
@@ -29,15 +29,14 @@
           {{eventType}}
         }
 
-          <img src="assets/images/arrow/arrow-down.png" alt="arrow icon" class="popover-img"  id="trigger-button">
+          <img src="assets/images/arrow/arrow-down.png" alt="arrow icon" class="arrow" id="trigger-button"> 
         </div>
       </ion-button>
 
       <ion-popover class="custom-popover"
       mode="ios"
       trigger="trigger-button"
-      side="bottom"
-      alignment="end"
+      side="bottom" alignment="center" id="popover-comp"
      >
         <ng-template class="popover-template">
           <ion-content>
@@ -64,7 +63,7 @@
   </ion-row>
 
   <ion-row class="secondLine">
-    <ion-col size="9">
+    <ion-col size="8">
       <ion-label>{{'form.phoneNumberLabel'|translate}}</ion-label>
     <sk-tel-input
       [totalBackgroundHexColor]="'#FFFFFF'" [selectorBackgroundHexColor]="'#0E89D0'"
@@ -73,7 +72,7 @@
       [dividerPreferredCountriesColor]="'#0E89D0'" [dividerSearchInputCountriesColor]="'#0E89D0'"
       [textInputHexColor]="'#212121'"
       [caretColorInput]="'#212121'"
-      [inputContents]="getFormControlValue('phone')"
+      [inputContents]="phoneValue"
       [placeholderInput]="'form.phoneNumber' | translate"
       [caseCodeSelectorTriggerID]="'register_page_mob_phone'"
       [initialSelectedCountryISO]="'gr'" [selectedCountryByPhoneCode]="getFormControlValue('prefix')"
@@ -118,3 +117,5 @@
 @if(added){
 <app-alert (alertClosed)="getCloseAlert($event)"></app-alert>
 }
+
+<ion-loading [isOpen]="isLoading" message="Loading..." [duration]="2000" spinner="circles" mode="ios"></ion-loading>

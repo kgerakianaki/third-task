@@ -1,9 +1,11 @@
 /*CSS FOR SK-INPUT-TEL*/
 //sktelChange
 
-.skInputRow[_ngcontent-ng-c1387238740]{
-    width:100%;
-    align-items:center
+.skInputRow[_ngcontent-ng-c1387238740] {
+    position: relative;
+    width: 100%;
+    align-items: center;
+    border: 2px solid #F1F7FE !important; /* Keep the general border color */
 }
 
 .mainInput[_ngcontent-ng-c1387238740]{    
@@ -11,11 +13,14 @@
     caret-color: #212121 !important;
     --highlight-color: #212121 !important;
     --placeholder-color: #212121;
-    width: calc(100% - 68px);
+   width: calc(100% - 106px) !important;
     font-weight: 700;
-    --padding-start: 5px;
-    min-height: 36px;
-    border-radius: 12px;
+    display:flex;
+    justify-content: space-between;
+    //--padding-start: 5px;
+    min-height: 40px !important;
+    border-radius: 8px!important;
+    border:1px solid #FFFFFF;
 }
 
 .ion-icon{
@@ -25,7 +30,7 @@
 .greyCountryCodelabel[_ngcontent-ng-c1387238740] {
     font-size: 14px;
     color: #ffffff !important; /* Make text white */
-    margin: 0 10px;
+    margin: 0 2px;
     display: inline-block;
 }
 
@@ -45,10 +50,16 @@
 
 .skInputRow[_ngcontent-ng-c1387238740] {
    width: 100%;
-   background: linear-gradient(to right, #0E89D0 21%, white 21%)!important;
+   //background-color: #0E89D0!important;
+   background: linear-gradient(to right, #0E89D0 24%, #FFFFFF 24%)!important;
 }
 
 
 .selectorIcon[_ngcontent-ng-c3860071647]{
     display:none;
+}
+
+
+.popover-arrow::after {
+    top: 2px!important;
 }

@@ -175,7 +175,6 @@ export class FormComponent implements OnInit {
 
   //This method close success alert
   getCloseAlert($event:any){
-    console.log("shit")
     //Close alert
     this.added=false;
     //Clean form

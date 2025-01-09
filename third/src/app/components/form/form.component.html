@@ -1,6 +1,6 @@
 <form [formGroup]="lotterySection" class="dataForm" (ngSubmit)="submitForm()">
   <ion-row class="firstLine">
-    <ion-col size="7">
+    <ion-col size="9">
       <ion-label>{{ 'form.email' | translate }}</ion-label>
       <div class="email-line">
         <ion-input
@@ -12,14 +12,9 @@
         ></ion-input>
       <img src="assets/images/email/mail.png" class="popover-img">
     </div>
-    <!-- Use *ngIf to check form control validity
-    @if(lotterySection.get('email')?.invalid && lotterySection.get('email')?.touched)
-    {
-      <p class="red">{{ checkEmailError() }}</p>
-    } -->
     </ion-col>
-    <ion-col class="event" size="5">
-      <ion-label>
+    <ion-col class="event" size="3">
+      <ion-label class="single-line-label">
        
         {{'form.eventType' | translate }}
        
@@ -69,7 +64,7 @@
   </ion-row>
 
   <ion-row class="secondLine">
-    <ion-col size="7">
+    <ion-col size="9">
       <ion-label>{{'form.phoneNumberLabel'|translate}}</ion-label>
     <sk-tel-input
       [totalBackgroundHexColor]="'#FFFFFF'" [selectorBackgroundHexColor]="'#0E89D0'"

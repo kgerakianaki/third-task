@@ -3,13 +3,14 @@
     justify-content: center; 
     align-items: center; 
     width: 100%;
-    min-width:900px;
-    height: 800px;
+    min-width:800px;
+    height: 680px;
 
 }
   
 .left-side, .right-side {
     flex: 1;
+    max-width: 700px;
     height: 100%;
 }
   
@@ -23,6 +24,10 @@
     background-color: #FFFFFF; 
     border-top-right-radius: 12px; /* Right side: top-right corner */
     border-bottom-right-radius: 12px; /* Right side: bottom-right corner */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
   
   

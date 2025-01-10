@@ -19,7 +19,7 @@
         {{'form.eventType' | translate }}
        
       </ion-label>
-      <ion-button class="popover-button" >
+      <ion-button class="popover-button" id="trigger-button">
         <div class="popoverButton">
 
         @if(eventType==''){
@@ -29,16 +29,19 @@
           {{eventType}}
         }
 
-          <img src="assets/images/arrow/arrow-down.png" alt="arrow icon" class="arrow" id="trigger-button"> 
+        <img src="assets/images/arrow/arrow-down.png" alt="arrow icon" class="arrow" > 
         </div>
       </ion-button>
 
-      <ion-popover class="custom-popover"
+      <ion-popover class="custom-popover" 
       mode="ios"
       trigger="trigger-button"
-      side="bottom" alignment="center" id="popover-comp"
+      alignment="end" id="popover-comp"
+      arrow="true"
+      aria-hidden="true"
+      [showBackdrop]="false" side="bottom"
      >
-        <ng-template class="popover-template">
+        <ng-template class="popover-template custom-popover-template">
           <ion-content>
             <div class="content" (click)="selectEvent('form.cinema')">
             <img src="assets/images/swiper-icons/cinema/cinema.png" alt="cinema icon" class="popover-img">

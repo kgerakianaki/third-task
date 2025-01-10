@@ -51,7 +51,7 @@ p.swiper {
   width: 8px;
   height: 8px;
   margin: 0 5px;
-  background-color: #dde3e9;;
+  background-color: #dde3e9;
   border-radius: 50%; /* Default circle shape */
   transition: background-color 0.3s, transform 0.3s;
 }
@@ -59,7 +59,7 @@ p.swiper {
 .custom-dots .dot.active {
   background-color: #ffffff;
   border-radius: 12px; 
-  width: 25px; 
+  width: 20px; 
   height: 8px; 
   transform: scale(1.2); 
 }

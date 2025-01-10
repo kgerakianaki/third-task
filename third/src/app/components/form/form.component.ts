@@ -75,13 +75,12 @@ export class FormComponent implements OnInit {
 
   // This method returns the value of a selected control of the form
   getFormControlValue(givenControlTag: string): any {
-    //return this.testForm.get(givenControlTag).value;
+    //return this.lotterySection.get(givenControlTag).value;
   }
 
   // This method is handling the output of the sk tel input
   handleSkTelInputContents(skTelOutput: SKTelInputOutput) {
     console.log("SK Tel Input Output: ", skTelOutput);
-
     this.lotterySection.get("mobilePrefix")?.setValue(`+${skTelOutput.selectedCountryCode.dialCode}`);
     this.lotterySection.get("mobile")?.setValue(`${skTelOutput.telInputContents}`);
     
@@ -189,12 +188,15 @@ export class FormComponent implements OnInit {
     this.added=false;
     //Clean form
     this.lotterySection.reset();
-
     // Reset other dynamic properties
     this.randomNumber = '';  // Reset random number
     this.eventType = '';      // Reset event type
     //Reset the sk-tel-input component 
     this.phoneValue = null;
+    //I dont line this but it works
+    setTimeout(() => {
+     this.phoneValue='';
+    }, 1000);
 
   }
 }

@@ -18,16 +18,19 @@ export class SwiperComponent implements OnInit {
 
   slides = [
     {
+      id:0,
       title: 'slider.cinemaTitle',
       description: 'slider.cinemaDescription',
       imageUrl: 'assets/images/swiper-icons/cinema/cinema.png'
     },
     {
+      id:1,
       title: 'slider.travelTitle',
       description: 'slider.travelDescription',
       imageUrl: 'assets/images/swiper-icons/travelling/travel.png'
     },
     {
+      id:2,
       title: 'slider.footballTitle',
       description: 'slider.footballDescription',
       imageUrl: 'assets/images/swiper-icons/football/soccer-game.png'
@@ -44,8 +47,8 @@ export class SwiperComponent implements OnInit {
    
   }
 
+  //This method gives the active index in slider
   onSlideChange(e: any) {
     this.activeSlideIndex= e?.detail?.[0]?.activeIndex;
-    console.log(this.activeSlideIndex);
   }
 }

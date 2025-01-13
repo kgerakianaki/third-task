@@ -55,22 +55,9 @@ export class FormComponent implements OnInit {
 
     this.lotterySection.get('email')?.valueChanges.subscribe(value => {
       console.log('Email Input Value:', value);
-      // Example logic: Automatically add a prefix if not provided
       const updatedValue = value ? value.trim() : ''; // trimming any spaces
-  
-      // Optionally, you can perform some transformation before setting the value
       this.lotterySection.get('email')?.setValue(updatedValue, { emitEvent: false });
     });
-  }
-
-  checkEmailError() {
-    const email = this.lotterySection.get('email');
-    if (email?.hasError('required')) {
-      return 'Email is required';
-    } else if (email?.hasError('pattern')) {
-      return 'Invalid email format';
-    }
-    return '';
   }
 
   // This method returns the value of a selected control of the form
@@ -86,17 +73,18 @@ export class FormComponent implements OnInit {
     
   }
 
+  //This method handles events
   selectEvent(str:string){
-  this.translateService.get(str).subscribe((res: string) => {
-    this.eventType = res;
-  });
+    this.translateService.get(str).subscribe((res: string) => {
+      this.eventType = res;
+    });
 
-  
-  // Sets the value of the 'eventType' form control in 'lotterySection' form group
-  this.lotterySection.get('eventType')?.setValue(this.eventType);
-  // Close the popover
-  this.popoverController.dismiss();  
+    // Sets the value of the 'eventType' form control in 'lotterySection' form group
+    this.lotterySection.get('eventType')?.setValue(this.eventType);
+    // Close the popover
+    this.popoverController.dismiss();  
   }
+
   // This function creates a random number
   generateRandomInteger() {
     const randomNumberNumber = Math.floor(Math.random() * 1000) + 1; // Random number (1, 1000)
@@ -109,8 +97,6 @@ export class FormComponent implements OnInit {
     this.lotterySection.get('ticketNumber')?.setValue(this.randomNumber);
 
   }
-
-  
 
   // Check if the email already exists in the ticket array
    isEmailDuplicate(email: string): boolean {
@@ -152,7 +138,6 @@ export class FormComponent implements OnInit {
       console.log(this.ticketArray)
       this.isLoading=true;
       setTimeout(() => {
-        // Your code to execute after 2 seconds
         this.added=true;
       }, 2000); // 2000 milliseconds = 2 seconds
     } else {
@@ -160,6 +145,7 @@ export class FormComponent implements OnInit {
     }
   }
 
+  //This method adds an ticket to the existing array
   addTicket(){
     const newTicket: Ticket = {
       id: this.ticketArray.length + 1,
@@ -171,12 +157,10 @@ export class FormComponent implements OnInit {
     };
 
     this.ticketArray.push(newTicket);
-    console.log('Ticket added:', newTicket);
-    console.log('ticketArray',this.ticketArray)
   }
 
-   // Method to disable the submit button based on validation
-   get isSubmitButtonDisabled(): boolean {
+  // Method to disable the submit button based on validation
+  get isSubmitButtonDisabled(): boolean {
     return !this.isFormValid();
   }
 

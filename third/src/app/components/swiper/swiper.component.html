@@ -19,9 +19,9 @@ slides-per-view="1"
 
 <!-- Custom Dots -->
 <div class="custom-dots">
-  <span *ngFor="let _ of slides; let i = index"
-        class="dot"
-        [ngClass]="{'active': i === activeSlideIndex}"></span>
+  @for(s of slides;track s.id; let i=$index ){
+    <span class="dot" [ngClass]="{'active': i === activeSlideIndex}"></span>
+  }
 </div>
 
 

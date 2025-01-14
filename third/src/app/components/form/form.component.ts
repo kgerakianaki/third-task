@@ -55,7 +55,7 @@ export class FormComponent implements OnInit {
 
     this.lotterySection.get('email')?.valueChanges.subscribe(value => {
       console.log('Email Input Value:', value);
-      const updatedValue = value ? value.trim() : ''; // trimming any spaces
+      const updatedValue = value ? value.trim() : ''; 
       this.lotterySection.get('email')?.setValue(updatedValue, { emitEvent: false });
     });
   }
@@ -139,7 +139,7 @@ export class FormComponent implements OnInit {
       this.isLoading=true;
       setTimeout(() => {
         this.added=true;
-      }, 2000); // 2000 milliseconds = 2 seconds
+      }, 2000); 
     } else {
       console.log('Form is invalid');
     }
@@ -173,11 +173,12 @@ export class FormComponent implements OnInit {
     //Clean form
     this.lotterySection.reset();
     // Reset other dynamic properties
-    this.randomNumber = '';  // Reset random number
-    this.eventType = '';      // Reset event type
+    this.randomNumber = '';  
+    this.eventType = '';     
+
     //Reset the sk-tel-input component 
     this.phoneValue = null;
-    //I dont line this but it works
+
     setTimeout(() => {
      this.phoneValue='';
     }, 1000);

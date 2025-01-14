@@ -6,8 +6,14 @@ padding-right: 25px;
 .popover-img {
     width: 32px;
     height: 32px;
+    padding-right: 8px;
 }
 
+.img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
 .arrow{
     width: 20px;
     height: 20px;
@@ -31,8 +37,16 @@ padding-right: 25px;
     justify-content: space-around;
     border: 2px solid  #F1F7FE;
     border-radius: 10px;
-    height:45px;
-    padding:0px 10px;
+    height:44px;
+}
+
+
+.email-line, .tel-input {
+    width: 100%;
+}
+
+ion-input.email, sk-tel-input {
+    width: 100% !important;
 }
 
 .event {
@@ -40,6 +54,10 @@ padding-right: 25px;
     align-items: flex-start;
     flex-direction: column;
     height:92px;
+}
+
+.nothing{
+    width: 100%;
 }
 
 .popoverButton {
@@ -109,13 +127,11 @@ padding-right: 25px;
     left: 100px; /* Moves the entire popover slightly to the right */
 }
 
-
-
 .secondLine{
-    display:flex;
-    flex-direction: column;
-    width:100%;
-    //padding: 5px 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .randomDraw{

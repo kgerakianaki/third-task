@@ -10,7 +10,7 @@
           required
           [placeholder]="'form.email' | translate"
         ></ion-input>
-      <img src="assets/images/email/mail.png" class="popover-img">
+      <img src="assets/images/email/mail.png" class="img">
     </div>
     </ion-col>
     <ion-col class="event" size="4">
@@ -68,6 +68,7 @@
   <ion-row class="secondLine">
     <ion-col size="8">
       <ion-label>{{'form.phoneNumberLabel'|translate}}</ion-label>
+      <div class="tel-input">
     <sk-tel-input
       [totalBackgroundHexColor]="'#FFFFFF'" [selectorBackgroundHexColor]="'#0E89D0'"
       [inputBackgroundHexColor]="'#FFFFFF'" [borderHexColor]="'#F1F7FE'"
@@ -85,7 +86,9 @@
       [readOnlyInput]="false"
       (emitInputContentEvent)="handleSkTelInputContents($event)">
     </sk-tel-input> 
+  </div>
     </ion-col>
+    <ion-col class="nothing" size="4"></ion-col>
   </ion-row>
 
   <ion-row>

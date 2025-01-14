@@ -1,17 +1,11 @@
 /*CSS FOR SK-INPUT-TEL*/
-.skInputRow[_ngcontent-ng-c1387238740] {
-    position: relative;
-    width: 100%;
-    align-items: center;
-    border: 2px solid #F1F7FE !important; /* Keep the general border color */
-}
 
 .mainInput[_ngcontent-ng-c1387238740]{    
     font-size: 16px;
     caret-color: #212121 !important;
     --highlight-color: #212121 !important;
     --placeholder-color: #212121;
-   width: calc(100% - 106px) !important;
+    width: calc(100% - 106px) !important;
     font-weight: 700;
     display:flex;
     justify-content: space-between;
@@ -20,6 +14,9 @@
     min-height: 35px !important;
     border-radius: 18px!important;
     border:1px solid #FFFFFF;
+}
+.mainInput, .email {
+    width: 100% !important;
 }
 
 .ion-icon{
@@ -50,7 +47,6 @@
 .skInputRow[_ngcontent-ng-c1387238740] {
    width: 100%;
    min-width: 370px !important;
-   //background-color: #0E89D0!important;
    background: linear-gradient(to right, #0E89D0 26%, #FFFFFF 26%)!important;
 }
 
